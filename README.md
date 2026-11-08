@@ -311,4 +311,4 @@ The four abort criteria for the 10% canary are in `REPORT.pdf`.
 ## 7. Citations and AI assistance
 
 Ideas from the lecture notebooks. An AI assistant (Claude) helped draft the code and documents; the code was run
-and checked by me, and all reported numbers come from my own runs.
+and checked by me, and all reported numbers come from my own runs. AI assistant was also used to generate the tests.
