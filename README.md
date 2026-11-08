@@ -308,23 +308,7 @@ The four abort criteria for the 10% canary are in `REPORT.pdf`.
 
 ---
 
-## 7. Troubleshooting (problems hit while developing)
-
-- **`ModuleNotFoundError: No module named 'joblib'` or the wrong `pytest`:** the venv is not active. Run
-  `source .venv/bin/activate`; check `which python` and `which pytest` point into `.venv`, or use `python -m pytest`.
-- **pytest crashes loading `launch_testing` / `lark` (ROS):** ROS sets `PYTHONPATH`. Run `unset PYTHONPATH`
-  (or `PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest ...`) in every terminal.
-- **`.../files/.venv/bin/python: No such file or directory`:** a stale venv from a moved folder. `deactivate`, `hash -r`,
-  `rm -rf .venv`, then recreate it.
-- **All load-test requests are errors with sub-millisecond latency:** nothing (or the wrong server) is listening on the
-  URL. Check `curl http://localhost:8000/healthz` first.
-- **Ray: `Failed to bind to address 127.0.0.1:8000`:** another process (usually the Part A server) holds the port.
-  `verify_ray.py` defaults to 8100; also run `ray stop --force`.
-- **`register` shows no aliases in an old table:** `search_model_versions` does not return aliases on the SQL store;
-  use `python partB/eta_mlflow.py table`.
-- **Do not submit** `data/`, `mlflow.db`, `mlruns/`, `.venv/`, `__pycache__/`.
-
-## 8. Citations and AI assistance
+## 7. Citations and AI assistance
 
 Ideas from the lecture notebooks. An AI assistant (Claude) helped draft the code and documents; the code was run
 and checked by me, and all reported numbers come from my own runs.
